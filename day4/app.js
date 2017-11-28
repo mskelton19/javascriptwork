@@ -77,8 +77,39 @@
 //
 // console.log(8 + ten());
 
-const multiply = function(num1, num2) {
-  return num1 * num2;
+// const multiply = function(num1, num2) {
+//   return num1 * num2;
+// }
+//
+// console.log(multiply(25,5));
+//
+//
+// const example = (input) => {
+//   if (input == 'none') return 0;
+//   return 1;
+// }
+//
+// example('none');
+
+// const calculateArea = (length, width) => {
+//   console.log(length * width);
+// }
+//
+// calculateArea(14, 5);
+
+// const math = (num1, num2, num3) => {
+//   console.log(num1 + num2 + num3);
+// }
+//
+// var a = math(254, 10, 2);
+// console.log(a.toString());
+
+const palindrome = (word) => {
+  if(word[0] === word.length-1) {
+    console.log('palindrome');
+  } else {
+    console.log('nah bro');
+  }
 }
 
-console.log(multiply(25,5));
+palindrome('oo');
