@@ -72,18 +72,36 @@
 //
 // reverseWords('america is murica');
 
-const calculate = (num1, num2, string) => {
-  if (string == 'add') {
-    console.log(num1 + num2);
-  } else if (string == 'sub') {
-    console.log(num1 - num2);
-  } else if (string == 'mult') {
-    console.log(num1 * num2);
-  } else if (string == 'div') {
-    console.log(num1 / num2);
-  } else if (string == 'exp') {
-    console.log(Math.pow(num1,num2));
+// const calculate = (num1, num2, string) => {
+//   if (string == 'add') {
+//     console.log(num1 + num2);
+//   } else if (string == 'sub') {
+//     console.log(num1 - num2);
+//   } else if (string == 'mult') {
+//     console.log(num1 * num2);
+//   } else if (string == 'div') {
+//     console.log(num1 / num2);
+//   } else if (string == 'exp') {
+//     console.log(Math.pow(num1,num2));
+//   }
+// }
+//
+// calculate(2, 3, 'exp');
+
+const pandigital = (num) => {
+  const splitNum = (num.split(''));
+  var total = 0;
+  for(let i = 0; i < num.length; i++){
+    total += +num[i];
+    console.log(total);
   }
 }
 
-calculate(2, 3, 'exp');
+pandigital('2645397');
+
+
+const reverseWords = (word) => {
+  console.log(word.split('').reverse().join('').toLowerCase());
+}
+
+reverseWords('Mike Skelton');
