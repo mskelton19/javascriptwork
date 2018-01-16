@@ -45,10 +45,14 @@ const getAverages = (windowSize, numArray) => {
   for(let i = 0; i < numArray.length; i++){
     if(i < windowSize - 1){
       sum += numArray[i];
-      console.log(sum/(i + 1));
-    } 
+      movingAverages.push(sum/(i + 1));
+    } else if(i + 1 === windowSize){
+      sum += numArray[i];
+      movingAverages.push(sum/windowSize);
+    }
   }
 }
 
-// getAverages(3, [0, 1, 2, 4]);
+// getAverages(3, [0, 1, 2, 3]);
 getAverages(5, [0, 1, -2, 3, -4, 5, -6, 7, -8, 9]);
+console.log(movingAverages);
