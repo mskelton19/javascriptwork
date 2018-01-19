@@ -1,43 +1,3 @@
-// var sum = 0;
-// var averages = [];
-//
-//
-// var computeMovingAverages = (windowSize, numArray) => {
-//   for(let i = 0; i < numArray.length; i++){
-//     if (i <= windowSize - 1){
-//     sum += numArray[i];
-//     averages.push(sum/(i+1));
-//   } else if(i >= numArray.length - windowSize){
-//       sum += numArray[i];
-//       averages.push(sum/windowSize);
-//   }
-//   }
-// }
-
-//
-// computeMovingAverages(5, [0, 1, -2, 3, -4, 5, -6, 7]);
-// console.log(averages);
-
-
-// var sum = 0;
-// var numbers = [];
-//
-// const averages = (number, array) => {
-//   for (let i = 0; i < array.length; i++){
-//     if(i <= array.length - number){
-//       sum += array[i];
-//       numbers.push(sum/(i + 1));
-//     } else if(i > array.length - number && i ){
-//       numbers.push((array[i] + array[i+1] + array[i-1])/number);
-//     }
-//   }
-// }
-//
-// averages(3, [1, 2, 3, 4, 5]);
-// console.log(numbers);
-
-
-
 var sum = 0;
 var movingAverages = [];
 
@@ -49,10 +9,31 @@ const getAverages = (windowSize, numArray) => {
     } else if(i + 1 === windowSize){
       sum += numArray[i];
       movingAverages.push(sum/windowSize);
+    } else if (i + 1 > windowSize && windowSize === 3){
+      movingAverages.push((numArray[i] + numArray[i - 1] + numArray[i-2])/windowSize);
+    } else {
+      movingAverages.push((numArray[i] + numArray[i-1] + numArray[i-2] + numArray[i-3] + numArray[i-4])/windowSize);
     }
   }
+  return movingAverages;
 }
-
+//
+//
 // getAverages(3, [0, 1, 2, 3]);
 getAverages(5, [0, 1, -2, 3, -4, 5, -6, 7, -8, 9]);
 console.log(movingAverages);
+
+// var numbers = [];
+// var sum = 0;
+//
+// const moveWindow = (num, array) => {
+//   for(let i = 0; i < array.length; i++){
+//     if(i >= array.length - num){
+//       sum += array[i];
+//       numbers.push(sum);
+//     }
+//   }
+// }
+//
+// moveWindow(3, [0, 1, 2, 3, 4]);
+// console.log(numbers);
